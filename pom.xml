@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>my-app</name>
   <url>http://maven.apache.org</url>
@@ -66,4 +66,22 @@
       </plugin>
     </plugins>
   </build>
+  <distributionManagement>
+    <repository>
+      <id>deployment</id>
+      <name>Internal Releases</name>
+      <url>http://localhost:8081/repository/SAMPLE-REL/</url>
+    </repository>
+    <snapshotRepository>
+      <id>deployment</id>
+      <name>Internal Snapshot Releases</name>
+      <url>http://localhost:8081/repository/SAMPLE-SNAP/</url>
+      </snapshotRepository>
+    </distributionManagement>
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+  </dependencies>
 </project>
